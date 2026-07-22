@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section id="home" class="py-20 lg:py-32 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2 text-center lg:text-left">
+            <p class="text-accent font-semibold mb-2 tracking-wide uppercase">Hello, I'm</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                Ahumuza John <span class="text-primary">Baptist</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl text-gray-600 font-medium mb-6">
+                Computer Science Student & Aspiring Developer
+            </h2>
+            <p class="text-gray-500 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                Second-year student at Kabale University, passionate about building 
+                scalable web applications and solving real-world problems through technology.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#projects" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-800 transition shadow-md text-center">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-primary hover:text-primary transition text-center">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+                <div class="lg:w-1/2 flex justify-center">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
+                <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" alt="Ahumuza John Baptist" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
+        <p class="text-gray-600 leading-relaxed text-lg mb-4">
+            I am a dedicated Computer Science student at Kabale University, currently in my second year. 
+            My journey in tech is driven by a desire to build software that makes a tangible impact, 
+            particularly for NGOs and community-focused organizations.
+        </p>
+        <p class="text-gray-600 leading-relaxed text-lg">
+            When I'm not coding in Python or designing interfaces with Tailwind CSS, you can find me 
+            exploring new technologies, collaborating on university projects, or mentoring fellow students. 
+            I am actively seeking opportunities to apply my skills in real-world environments.
+        </p>
+    </div>
+</section>
+
+<!-- PROJECTS SECTION (DYNAMIC) -->
+<section id="projects" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">My Projects</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">A selection of projects I've built to solve real-world problems.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for project in projects %}
+            <div class="bg-gray-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
+                <!-- Project Image Placeholder -->
+                <div class="h-48 bg-gray-200 flex items-center justify-center">
+                    {% if project.image_url %}
+                        <img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+                    {% else %}
+                        <span class="text-gray-400 font-medium">Project Image</span>
+                    {% endif %}
+                </div>
+                
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">{{ project.title }}</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">{{ project.description }}</p>
+                    
+                    <!-- Tech Stack Tags -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        {% for tech in project.technologies.split(',') %}
+                            <span class="px-2 py-1 bg-blue-100 text-primary text-xs font-medium rounded">{{ tech.strip() }}</span>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Links -->
+                    <div class="flex gap-4 mt-auto">
+                        {% if project.github_link and project.github_link != '#' %}
+                        <a href="{{ project.github_link }}" target="_blank" class="text-sm font-medium text-primary hover:text-blue-800 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            Code
+                        </a>
+                        {% endif %}
+                        {% if project.demo_link and project.demo_link != '#' %}
+                        <a href="{{ project.demo_link }}" target="_blank" class="text-sm font-medium text-accent hover:text-teal-700 flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Live Demo
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE & SKILLS SECTION (DYNAMIC) -->
+<section id="experience" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16">
+            
+            <!-- EXPERIENCE COLUMN -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Experience</h2>
+                <div class="space-y-8">
+                    {% for exp in experiences %}
+                    <div class="relative pl-8 border-l-2 border-primary">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-white"></div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900">{{ exp.title }}</h3>
+                        <p class="text-accent font-semibold text-sm mb-1">{{ exp.organization }}</p>
+                        <p class="text-gray-500 text-sm mb-3">{{ exp.duration }} • <span class="uppercase font-medium">{{ exp.type }}</span></p>
+                        <p class="text-gray-600">{{ exp.description }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- SKILLS COLUMN -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Skills</h2>
+                <div class="space-y-6">
+                    {% for skill in skills %}
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700 font-medium">{{ skill.name }}</span>
+                            <span class="text-gray-500 text-sm">{{ skill.proficiency }}%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full transition-all duration-500" style="width: {{ skill.proficiency | default(0) | int }}%;"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Image Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            
+            <!-- Image 1: Headshot -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" alt="Professional Headshot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">Professional Headshot</span>
+                </div>
+            </div>
+
+            <!-- Image 2: Team Photo 1 -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/team.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/team.jpeg') }}" alt="Team Collaboration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">Team Collaboration</span>
+                </div>
+            </div>
+
+            <!-- Image 3: Event 1 -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/event1.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/event1.jpeg') }}" alt="University Event" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">University Event</span>
+                </div>
+            </div>
+
+            <!-- Image 4: Kab Hack -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/kab-hack.jpg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/kab-hack.jpg') }}" alt="Kabale Hackathon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">Kabale Hackathon</span>
+                </div>
+            </div>
+
+            <!-- Image 5: Speaker -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/speaker.jpg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/speaker.jpg') }}" alt="Public Speaking" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">Public Speaking</span>
+                </div>
+            </div>
+
+            <!-- Image 6: Team 2 -->
+            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/team2.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/gallery/team2.jpeg') }}" alt="Project Team" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span class="text-white font-medium text-sm text-center px-2">Project Team</span>
+                </div>
+            </div>
+
+        </div>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">
+                Have a project in mind, an investment opportunity, or just want to say hello? I'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <form action="{{ url_for('main.contact_submit') }}" method="POST" class="space-y-6">
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                            placeholder="John Doe">
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                            placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <!-- Subject Field -->
+                <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                        placeholder="Project Inquiry / Investment / Job Opportunity">
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
+                        placeholder="Tell me about your project or how we can work together..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center md:text-left">
+                    <button type="submit" 
+                        class="px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-blue-800 transition shadow-md transform hover:scale-[1.02]">
+                        Send Message
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
