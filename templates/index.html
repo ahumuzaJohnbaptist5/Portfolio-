@@ -3,32 +3,34 @@
 {% block content %}
 
 <!-- HERO SECTION -->
-<section id="home" class="py-20 md:py-32">
+<section id="home" class="py-12 md:py-32">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- flex-col-reverse puts image on top for mobile -->
+        <div class="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
             
-            <!-- Left Content -->
-            <div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <!-- Left Content (Text) -->
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6">
                     Ahumuza John<br>
                     <span class="text-accent">Baptist</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-gray-400 mb-6 font-light">
+                <p class="text-lg md:text-2xl text-gray-400 mb-4 md:mb-6 font-light">
                     Software Developer.<br>
                     Product Builder.<br>
                     Systems Thinker.
                 </p>
                 
-                <p class="text-gray-400 mb-8 max-w-xl leading-relaxed">
+                <p class="text-gray-400 mb-6 md:mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed text-sm md:text-base">
                     Building web products, backend systems, and digital experiences with strong engineering and visual taste.
                 </p>
                 
-                <p class="text-sm text-gray-500 mb-8 tracking-wide">
+                <p class="text-xs md:text-sm text-gray-500 mb-6 md:mb-8 tracking-wide">
                     PYTHON • FLASK • POSTGRESQL • WEB DEVELOPMENT • ENTREPRENEURSHIP
                 </p>
                 
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#work" class="px-6 py-3 bg-accent text-black font-semibold rounded hover:bg-accent/90 transition">
                         View Work
                     </a>
@@ -38,13 +40,16 @@
                 </div>
             </div>
             
-            <!-- Right Content - Headshot -->
-            <div class="flex justify-center md:justify-end">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-accent/20 rounded-2xl transform rotate-3"></div>
+            <!-- Right Content - Headshot (Full width on mobile) -->
+            <div class="flex-1 w-full -mx-6 md:mx-0">
+                <div class="relative w-full">
+                    <!-- Glow effect (only visible on desktop) -->
+                    <div class="absolute inset-0 bg-accent/10 rounded-none md:rounded-2xl transform rotate-0 md:rotate-3 blur-lg hidden md:block"></div>
+                    
+                    <!-- Image stretches to edges on mobile, rounded on desktop -->
                     <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" 
                          alt="Ahumuza John Baptist" 
-                         class="relative w-full max-w-md rounded-2xl shadow-2xl">
+                         class="relative w-full h-auto object-cover rounded-none md:rounded-2xl shadow-2xl border-0 md:border border-gray-800">
                 </div>
             </div>
             
