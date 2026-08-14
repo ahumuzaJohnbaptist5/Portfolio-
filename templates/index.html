@@ -3,315 +3,120 @@
 {% block content %}
 
 <!-- HERO SECTION -->
-<section id="home" class="py-20 lg:py-32 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-        <div class="lg:w-1/2 text-center lg:text-left">
-            <p class="text-accent font-semibold mb-2 tracking-wide uppercase">Hello, I'm</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
-                Ahumuza John <span class="text-primary">Baptist</span>
-            </h1>
-            <h2 class="text-xl md:text-2xl text-gray-600 font-medium mb-6">
-                Computer Science Student & Aspiring Developer
-            </h2>
-            <p class="text-gray-500 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                Second-year student at Kabale University, passionate about building 
-                scalable web applications and solving real-world problems through technology.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#projects" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-800 transition shadow-md text-center">
-                    View My Work
-                </a>
-                <a href="#contact" class="px-6 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-primary hover:text-primary transition text-center">
-                    Contact Me
-                </a>
+<section id="home" class="py-20 md:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Content -->
+            <div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                    Ahumuza John<br>
+                    <span class="text-accent">Baptist</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-400 mb-6 font-light">
+                    Software Developer.<br>
+                    Product Builder.<br>
+                    Systems Thinker.
+                </p>
+                
+                <p class="text-gray-400 mb-8 max-w-xl leading-relaxed">
+                    Building web products, backend systems, and digital experiences with strong engineering and visual taste.
+                </p>
+                
+                <p class="text-sm text-gray-500 mb-8 tracking-wide">
+                    PYTHON • FLASK • POSTGRESQL • WEB DEVELOPMENT • ENTREPRENEURSHIP
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="px-6 py-3 bg-accent text-black font-semibold rounded hover:bg-accent/90 transition">
+                        View Work
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-700 text-white font-semibold rounded hover:border-white transition">
+                        Let's Connect
+                    </a>
+                </div>
             </div>
-        </div>
-                <div class="lg:w-1/2 flex justify-center">
-            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gray-100">
-                <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" alt="Ahumuza John Baptist" class="w-full h-full object-cover">
+            
+            <!-- Right Content - Headshot -->
+            <div class="flex justify-center md:justify-end">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-accent/20 rounded-2xl transform rotate-3"></div>
+                    <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" 
+                         alt="Ahumuza John Baptist" 
+                         class="relative w-full max-w-md rounded-2xl shadow-2xl">
+                </div>
             </div>
+            
         </div>
     </div>
 </section>
 
 <!-- ABOUT SECTION -->
-<section id="about" class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<section id="about" class="py-20 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12">About Me</h2>
         
-        <!-- Header -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-            <p class="text-xl text-primary font-semibold mb-6">
-                Technology Enthusiast • Computer Scientist • Entrepreneur • Problem Solver
-            </p>
-            <p class="text-gray-600 leading-relaxed text-lg max-w-3xl mx-auto">
-                I am a Computer Science student at <strong>Kabale University</strong>, a technology entrepreneur, 
-                computer technician, and software developer passionate about using technology to solve real-world problems. 
-                My journey combines hands-on technical experience with software development, leadership, innovation, and entrepreneurship.
-            </p>
-            <p class="text-gray-600 leading-relaxed text-lg max-w-3xl mx-auto mt-4">
-                I believe technology is most valuable when it is <strong>accessible, practical, and capable of improving people's everyday lives</strong>.
-            </p>
-        </div>
-
-        <!-- Personal Brand Badges -->
-        <div class="flex flex-wrap justify-center gap-3 mb-16">
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">💻 Computer Science</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">🚀 Technology Entrepreneur</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">🛠️ Computer Technician</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">👨‍💻 Software Developer</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">🔗 Blockchain Enthusiast</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">💡 Innovator</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">🤝 Community Builder</span>
-            <span class="px-4 py-2 bg-white text-primary font-medium rounded-full shadow-sm border border-gray-200">📚 Lifelong Learner</span>
-        </div>
-
-        <!-- My Journey -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">1</span>
-                My Journey
-            </h3>
-            <div class="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                    My technology journey started with a strong interest in computers and hands-on technical work. 
-                    I pursued a <strong>Diploma in Information Technology, specializing in Computer Repair and Maintenance</strong>, 
-                    which gave me a practical foundation in diagnosing, servicing, and maintaining computers.
-                </p>
-                <p>
-                    I am currently pursuing a <strong>Bachelor's degree in Computer Science at Kabale University</strong>, 
-                    where I continue to develop my skills in programming, software development, emerging technologies, and problem-solving.
-                </p>
-                <p>
-                    Alongside my studies, I founded <strong>JBRO Computer Solutions</strong>, through which I provide 
-                    technology services to students, businesses, and individuals in Kabale.
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-accent font-semibold mb-3">Who I Am</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    A Computer Science student at Kabale University, technology entrepreneur, and software developer passionate about solving real-world problems.
                 </p>
             </div>
-        </div>
-
-        <!-- What I Do -->
-        <div class="grid md:grid-cols-3 gap-6 mb-8">
-            <!-- Computer Technology -->
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center mb-4 text-2xl">
-                    💻
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Computer Technology</h3>
-                <ul class="space-y-2 text-gray-600 text-sm">
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary mt-1">•</span>
-                        <span>Computer servicing and repair</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary mt-1">•</span>
-                        <span>Software installation</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary mt-1">•</span>
-                        <span>System upgrades and updates</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary mt-1">•</span>
-                        <span>Technical support</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-primary mt-1">•</span>
-                        <span>Laptop and phone sales</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Software Development -->
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4 text-2xl">
-                    👨‍💻
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Software Development</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    I build digital solutions that address practical problems in communities, businesses, and education.
-                </p>
-                <p class="text-gray-700 font-semibold text-sm mb-2">My interests include:</p>
-                <ul class="space-y-2 text-gray-600 text-sm">
-                    <li class="flex items-start gap-2">
-                        <span class="text-green-600 mt-1">•</span>
-                        <span>Web development</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-green-600 mt-1">•</span>
-                        <span>Backend development</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-green-600 mt-1">•</span>
-                        <span>APIs & Database systems</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-green-600 mt-1">•</span>
-                        <span>Blockchain technology</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-green-600 mt-1">•</span>
-                        <span>AI and emerging technologies</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Entrepreneurship -->
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-4 text-2xl">
-                    🚀
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Entrepreneurship</h3>
-                <p class="text-gray-600 text-sm mb-3">
-                    Through <strong>JBRO Computer Solutions</strong>, I am building a technology-focused business that 
-                    connects technical expertise with real community needs.
-                </p>
-                <p class="text-gray-600 text-sm">
-                    I am also working on <strong>PrintHub</strong>, an online printing platform designed to make 
-                    printing services more convenient for students.
-                </p>
-            </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">2</span>
-                Featured Projects
-            </h3>
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- GURA -->
-                <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition-colors">
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">GURA</h4>
-                    <p class="text-gray-600 text-sm mb-3">
-                        A marketplace connecting <strong>computer technicians, repair shops, electronics shops, suppliers, and customers</strong>.
-                    </p>
-                    <p class="text-primary font-semibold text-sm mb-3">
-                        <strong>Goal:</strong> Make it easier for people to find trusted technology services and products.
-                    </p>
-                    <a href="https://github.com/ahumuzaJohnbaptist5/Gura" target="_blank" 
-                       class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-800">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        View on GitHub
-                    </a>
-                </div>
-
-                <!-- PrintHub -->
-                <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-primary transition-colors">
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">PrintHub</h4>
-                    <p class="text-gray-600 text-sm mb-3">
-                        An online printing platform that allows users, particularly students, to submit printing requests digitally.
-                    </p>
-                    <a href="https://printhubug.com" target="_blank" 
-                       class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-teal-700">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                        Visit PrintHub Uganda
-                    </a>
-                </div>
+            <div>
+                <h3 class="text-accent font-semibold mb-3">What I Build</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    Full-stack web applications, scalable backend systems, and digital platforms that blend engineering with thoughtful design.
+                </p>
             </div>
-
-            <div class="mt-6 p-4 bg-gray-50 rounded-xl">
-                <p class="text-gray-700 text-sm">
-                    <strong>Other Innovation:</strong> I am also exploring solutions around 
-                    <strong>blockchain, digital identity, education, student talent visibility, and decentralized technologies</strong>.
+            
+            <div>
+                <h3 class="text-accent font-semibold mb-3">My Focus</h3>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    Building products that matter through JBR0 Computer Solutions. I specialize in web technologies and systems that empower communities.
                 </p>
             </div>
         </div>
-
-        <!-- Leadership & Community -->
-        <div class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl shadow-lg p-8 text-white mb-8">
-            <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                <span class="w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center text-sm">3</span>
-                Leadership & Community
-            </h3>
-            <p class="text-blue-100 leading-relaxed mb-4 text-lg">
-                I believe leadership is not simply about holding a position—it is about 
-                <strong>creating opportunities for others to grow</strong>.
-            </p>
-            <p class="text-blue-100 leading-relaxed mb-4">
-                I have taken part in student leadership, technology training, mentorship, workshops, and community initiatives. 
-                I enjoy helping other students learn technologies such as 
-                <strong>Git & GitHub, programming, AI tools, and digital platforms</strong>.
-            </p>
-            <p class="text-blue-100 leading-relaxed">
-                My goal is to encourage young people to move beyond simply consuming technology and become 
-                <strong>builders, innovators, and problem solvers</strong>.
-            </p>
-        </div>
-
-        <!-- Vision -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 border-l-4 border-accent">
-            <h3 class="text-2xl font-bold text-gray-900 mb-4">My Vision</h3>
-            <blockquote class="text-xl text-gray-700 italic leading-relaxed mb-4 border-l-4 border-primary pl-6">
-                "To use technology, innovation, and entrepreneurship to create practical solutions that empower people and transform communities."
-            </blockquote>
-            <p class="text-gray-600 leading-relaxed">
-                I envision building technology solutions that start by solving local problems and eventually scale beyond Uganda.
-            </p>
-        </div>
-
-        <!-- Short Version -->
-        <div class="bg-gray-100 rounded-2xl p-8 text-center">
-            <p class="text-gray-700 leading-relaxed text-lg">
-                <strong>I am a Computer Science student, technology entrepreneur, computer technician, and software developer 
-                passionate about building solutions that make a difference.</strong> From repairing computers to developing 
-                digital platforms, my journey is driven by one goal: <strong>using technology to solve real problems and create opportunities</strong>.
-            </p>
-        </div>
-
     </div>
 </section>
 
-<!-- PROJECTS SECTION (DYNAMIC) -->
-<section id="projects" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">My Projects</h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">A selection of projects I've built to solve real-world problems.</p>
-        </div>
+<!-- FEATURED WORK -->
+<section id="work" class="py-20 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-2">Featured Work</h2>
+        <p class="text-gray-400 mb-12">A selection of recent projects.</p>
         
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="space-y-12">
             {% for project in projects %}
-            <div class="bg-gray-50 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col">
-                <!-- Project Image Placeholder -->
-                <div class="h-48 bg-gray-200 flex items-center justify-center">
-                    {% if project.image_url %}
-                        <img src="{{ project.image_url }}" alt="{{ project.title }}" class="w-full h-full object-cover">
-                    {% else %}
-                        <span class="text-gray-400 font-medium">Project Image</span>
-                    {% endif %}
+            <div class="group">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                    <h3 class="text-2xl font-semibold mb-2 md:mb-0">{{ project.title }}</h3>
+                    <div class="flex gap-2">
+                        {% if project.demo_link != '#' %}
+                        <span class="px-3 py-1 bg-accent/20 text-accent text-xs font-medium rounded-full">Live</span>
+                        {% else %}
+                        <span class="px-3 py-1 bg-gray-800 text-gray-400 text-xs font-medium rounded-full">In Development</span>
+                        {% endif %}
+                    </div>
                 </div>
                 
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">{{ project.title }}</h3>
-                    <p class="text-gray-600 text-sm mb-4 flex-grow">{{ project.description }}</p>
-                    
-                    <!-- Tech Stack Tags -->
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        {% for tech in project.technologies.split(',') %}
-                            <span class="px-2 py-1 bg-blue-100 text-primary text-xs font-medium rounded">{{ tech.strip() }}</span>
-                        {% endfor %}
-                    </div>
-                    
-                    <!-- Links -->
-                    <div class="flex gap-4 mt-auto">
-                        {% if project.github_link and project.github_link != '#' %}
-                        <a href="{{ project.github_link }}" target="_blank" class="text-sm font-medium text-primary hover:text-blue-800 flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            Code
-                        </a>
-                        {% endif %}
-                        {% if project.demo_link and project.demo_link != '#' %}
-                        <a href="{{ project.demo_link }}" target="_blank" class="text-sm font-medium text-accent hover:text-teal-700 flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            Live Demo
-                        </a>
-                        {% endif %}
-                    </div>
+                <p class="text-gray-400 mb-4 max-w-3xl">{{ project.description }}</p>
+                
+                <div class="flex flex-wrap gap-3 mb-4">
+                    {% for tech in project.technologies.split(',')[:4] %}
+                    <span class="text-xs text-gray-500">{{ tech.strip() }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="flex gap-4">
+                    {% if project.github_link %}
+                    <a href="{{ project.github_link }}" target="_blank" class="text-sm text-accent hover:underline">GitHub →</a>
+                    {% endif %}
+                    {% if project.demo_link and project.demo_link != '#' %}
+                    <a href="{{ project.demo_link }}" target="_blank" class="text-sm text-accent hover:underline">Live Project →</a>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -319,161 +124,75 @@
     </div>
 </section>
 
-<!-- EXPERIENCE & SKILLS SECTION (DYNAMIC) -->
-<section id="experience" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16">
+<!-- TECH STACK -->
+<section id="stack" class="py-20 border-t border-gray-800 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12">Tech Stack</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-accent font-semibold mb-4">Frontend</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>HTML5</li>
+                    <li>Tailwind CSS</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
             
-            <!-- EXPERIENCE COLUMN -->
             <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">Experience</h2>
-                <div class="space-y-8">
-                    {% for exp in experiences %}
-                    <div class="relative pl-8 border-l-2 border-primary">
-                        <!-- Timeline Dot -->
-                        <div class="absolute -left-[9px] top-0 w-4 h-4 bg-primary rounded-full border-4 border-white"></div>
-                        
-                        <h3 class="text-xl font-bold text-gray-900">{{ exp.title }}</h3>
-                        <p class="text-accent font-semibold text-sm mb-1">{{ exp.organization }}</p>
-                        <p class="text-gray-500 text-sm mb-3">{{ exp.duration }} • <span class="uppercase font-medium">{{ exp.type }}</span></p>
-                        <p class="text-gray-600">{{ exp.description }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
+                <h3 class="text-accent font-semibold mb-4">Backend</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>PostgreSQL</li>
+                    <li>REST APIs</li>
+                    <li>Database Design</li>
+                </ul>
             </div>
-
-            <!-- SKILLS COLUMN -->
+            
             <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">Technical Skills</h2>
-                <div class="space-y-6">
-                    {% for skill in skills %}
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-gray-700 font-medium">{{ skill.name }}</span>
-                            <span class="text-gray-500 text-sm">{{ skill.proficiency }}%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-primary h-2.5 rounded-full transition-all duration-500" style="width: {{ skill.proficiency | default(0) | int }}%;"></div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+                <h3 class="text-accent font-semibold mb-4">Product & Tools</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>Git & GitHub</li>
+                    <li>Render</li>
+                    <li>VS Code</li>
+                    <li>Postman</li>
+                </ul>
             </div>
-
         </div>
     </div>
 </section>
 
-        <!-- Image Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            
-            <!-- Image 1: Headshot -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/headshot.jpeg') }}" alt="Professional Headshot" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">Professional Headshot</span>
-                </div>
-            </div>
-
-            <!-- Image 2: Team Photo 1 -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/team.jpeg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/team.jpeg') }}" alt="Team Collaboration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">Team Collaboration</span>
-                </div>
-            </div>
-
-            <!-- Image 3: Event 1 -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/event1.jpeg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/event1.jpeg') }}" alt="University Event" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">University Event</span>
-                </div>
-            </div>
-
-            <!-- Image 4: Kab Hack -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/kab-hack.jpg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/kab-hack.jpg') }}" alt="Kabale Hackathon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">Kabale Hackathon</span>
-                </div>
-            </div>
-
-            <!-- Image 5: Speaker -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/speaker.jpg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/speaker.jpg') }}" alt="Public Speaking" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">Public Speaking</span>
-                </div>
-            </div>
-
-            <!-- Image 6: Team 2 -->
-            <div class="gallery-item relative group overflow-hidden rounded-xl shadow-sm cursor-pointer aspect-square" data-src="{{ url_for('static', filename='images/gallery/team2.jpeg') }}">
-                <img src="{{ url_for('static', filename='images/gallery/team2.jpeg') }}" alt="Project Team" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="text-white font-medium text-sm text-center px-2">Project Team</span>
-                </div>
-            </div>
-
-        </div>
-
 <!-- CONTACT SECTION -->
-<section id="contact" class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <p class="text-gray-500 max-w-2xl mx-auto">
-                Have a project in mind, an investment opportunity, or just want to say hello? I'd love to hear from you.
-            </p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <form action="{{ url_for('main.contact_submit') }}" method="POST" class="space-y-6">
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Name Field -->
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
-                        <input type="text" id="name" name="name" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                            placeholder="John Doe">
-                    </div>
-
-                    <!-- Email Field -->
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                            placeholder="john@example.com">
-                    </div>
-                </div>
-
-                <!-- Subject Field -->
-                <div>
-                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                    <input type="text" id="subject" name="subject" required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
-                        placeholder="Project Inquiry / Investment / Job Opportunity">
-                </div>
-
-                <!-- Message Field -->
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                    <textarea id="message" name="message" rows="5" required
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
-                        placeholder="Tell me about your project or how we can work together..."></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="text-center md:text-left">
-                    <button type="submit" 
-                        class="px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-blue-800 transition shadow-md transform hover:scale-[1.02]">
-                        Send Message
-                    </button>
-                </div>
-
-            </form>
-        </div>
+<section id="contact" class="py-20 border-t border-gray-800">
+    <div class="max-w-2xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+        <p class="text-gray-400 mb-8">
+            Have a project in mind? I'd love to hear from you.
+        </p>
+        
+        <form action="{{ url_for('main.contact_submit') }}" method="POST" class="space-y-4">
+            <div>
+                <input type="text" name="name" required placeholder="Your Name" 
+                    class="w-full px-4 py-3 bg-black border border-gray-800 rounded focus:outline-none focus:border-accent text-white text-sm">
+            </div>
+            <div>
+                <input type="email" name="email" required placeholder="Your Email" 
+                    class="w-full px-4 py-3 bg-black border border-gray-800 rounded focus:outline-none focus:border-accent text-white text-sm">
+            </div>
+            <div>
+                <input type="text" name="subject" placeholder="Subject" 
+                    class="w-full px-4 py-3 bg-black border border-gray-800 rounded focus:outline-none focus:border-accent text-white text-sm">
+            </div>
+            <div>
+                <textarea name="message" rows="5" required placeholder="Your Message" 
+                    class="w-full px-4 py-3 bg-black border border-gray-800 rounded focus:outline-none focus:border-accent text-white text-sm resize-none"></textarea>
+            </div>
+            <button type="submit" class="px-6 py-3 bg-accent text-black font-semibold rounded hover:bg-accent/90 transition">
+                Send Message
+            </button>
+        </form>
     </div>
 </section>
 

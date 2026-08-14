@@ -1,65 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahumuza John Baptist | Portfolio</title>
+    <title>Ahumuza John Baptist | Software Developer & Entrepreneur</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e3a8a',
-                        secondary: '#4b5563',
-                        accent: '#14b8a6',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .text-accent { color: #ccff00; }
+        .bg-accent { background-color: #ccff00; }
+        .border-accent { border-color: #ccff00; }
+        .hover\:bg-accent:hover { background-color: #b8e600; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+<body class="bg-black text-white antialiased">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center h-full">
-    <img src="{{ url_for('static', filename='images/gallery/logo.jpg') }}" alt="JBRO Computer Solutions" class="h-12 w-auto object-contain">
-</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-primary transition font-medium">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary transition font-medium">About</a>
-                    <a href="#projects" class="text-gray-600 hover:text-primary transition font-medium">Projects</a>
-                    <a href="#experience" class="text-gray-600 hover:text-primary transition font-medium">Experience</a>
-                    <a href="#gallery" class="text-gray-600 hover:text-primary transition font-medium">Gallery</a>
-                    <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-800 transition font-medium">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
+    <!-- Navigation -->
+    <nav class="border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">
+                <img src="{{ url_for('static', filename='images/gallery/logo.jpg') }}" alt="JBRO" class="h-10 w-auto">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm text-gray-400 hover:text-white transition">HOME</a>
+                <a href="#about" class="text-sm text-gray-400 hover:text-white transition">ABOUT</a>
+                <a href="#work" class="text-sm text-gray-400 hover:text-white transition">WORK</a>
+                <a href="#contact" class="text-sm text-gray-400 hover:text-white transition">CONTACT</a>
             </div>
+            
+            <a href="#contact" class="hidden md:block px-5 py-2.5 bg-accent text-black text-sm font-semibold rounded hover:bg-accent/90 transition">
+                Let's Talk
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-        <!-- Mobile Menu (hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-2">
-                <a href="#home" class="block text-gray-600 hover:text-primary font-medium">Home</a>
-                <a href="#about" class="block text-gray-600 hover:text-primary font-medium">About</a>
-                <a href="#projects" class="block text-gray-600 hover:text-primary font-medium">Projects</a>
-                <a href="#experience" class="block text-gray-600 hover:text-primary font-medium">Experience</a>
-                <a href="#gallery" class="block text-gray-600 hover:text-primary font-medium">Gallery</a>
-                <a href="#contact" class="block text-gray-600 hover:text-primary font-medium">Contact</a>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 bg-black">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-sm text-gray-400 hover:text-white">HOME</a>
+                <a href="#about" class="block text-sm text-gray-400 hover:text-white">ABOUT</a>
+                <a href="#work" class="block text-sm text-gray-400 hover:text-white">WORK</a>
+                <a href="#contact" class="block text-sm text-gray-400 hover:text-white">CONTACT</a>
             </div>
         </div>
     </nav>
@@ -68,19 +58,27 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 mt-16">
-        <div class="max-w-6xl mx-auto px-4 py-8 text-center">
-            <p>&copy; 2026 Ahumuza John Baptist. All rights reserved.</p>
-            <p class="text-sm mt-2">Built with Flask & Tailwind CSS</p>
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-gray-500">© 2026 Ahumuza John Baptist</p>
+            <div class="flex space-x-6">
+                <a href="https://github.com/ahumuzaJohnbaptist5" target="_blank" class="text-sm text-gray-500 hover:text-white">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-sm text-gray-500 hover:text-white">LinkedIn</a>
+                <a href="mailto:your.email@example.com" class="text-sm text-gray-500 hover:text-white">Email</a>
+            </div>
         </div>
     </footer>
 
     <script>
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
     </script>
+
 </body>
 </html>
