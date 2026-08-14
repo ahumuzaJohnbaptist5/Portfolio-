@@ -14,8 +14,8 @@ def seed_database():
             title="VAL APP",
             description="A backend application for value-added services with scalable architecture and robust API design.",
             technologies="Python, Flask, REST API, PostgreSQL",
-            github_link="https://github.com/ahumuzaJohnbaptist5/VAL_APP",
-            demo_link="#",
+            github_link="",
+            demo_link="https://val-site-puce.vercel.app/shopping.html",  # <-- LIVE LINK ADDED
             image_url=""
         )
         
@@ -23,7 +23,7 @@ def seed_database():
             title="Print Hub",
             description="An online printing platform making document services more convenient and accessible for students.",
             technologies="Python, Flask, PostgreSQL, Web Development",
-            github_link="https://github.com/ahumuzaJohnbaptist5/print_hub",
+            github_link="",
             demo_link="https://printhubug.com",
             image_url=""
         )
@@ -32,8 +32,8 @@ def seed_database():
             title="GURA",
             description="A marketplace connecting computer technicians, repair shops, and customers to find trusted technology services.",
             technologies="Python, Flask, PostgreSQL, Marketplace",
-            github_link="https://github.com/ahumuzaJohnbaptist5/Gura",
-            demo_link="#",
+            github_link="",
+            demo_link="https://gura-bp8d.onrender.com/",  # <-- LIVE LINK ADDED
             image_url=""
         )
 
@@ -41,9 +41,9 @@ def seed_database():
             title="Professional Portfolio",
             description="This very website! A dynamic, database-driven portfolio built to showcase my skills, projects, and experience.",
             technologies="Python, Flask, PostgreSQL, HTML, Tailwind CSS",
-            github_link="https://github.com/ahumuzaJohnbaptist5/Portfolio-",
+            github_link="",
             image_url="/static/images/gallery/headshot.jpeg",
-            demo_link="#"
+            demo_link="https://ahumuza-portfolio.onrender.com/"  # <-- LIVE LINK ADDED
         )
 
         db.session.add_all([p1, p2, p3, p4])
